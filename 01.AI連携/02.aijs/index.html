@@ -489,21 +489,21 @@
 <span class=c1>// To store the classification</span>
 <span class=kd>let</span> <span class=nx>label</span> <span class=o>=</span> <span class=s2>&quot;&quot;</span><span class=p>;</span>
 <span class=c1>// port</span>
-<span class=kd>let</span> <span class=nx>port4</span><span class=p>;</span>
-<span class=kd>let</span> <span class=nx>port5</span><span class=p>;</span>
-
+<span class=hll><span class=kd>let</span> <span class=nx>port4</span><span class=p>;</span>
+</span><span class=hll><span class=kd>let</span> <span class=nx>port5</span><span class=p>;</span>
+</span>
 <span class=c1>// Load the model first</span>
 <span class=kd>function</span> <span class=nx>preload</span><span class=p>()</span> <span class=p>{</span>
   <span class=nx>classifier</span> <span class=o>=</span> <span class=nx>ml5</span><span class=p>.</span><span class=nx>imageClassifier</span><span class=p>(</span><span class=nx>imageModelURL</span><span class=p>);</span>
 <span class=p>}</span>
 
 <span class=kd>function</span> <span class=nx>setup</span><span class=p>()</span> <span class=p>{</span>
-  <span class=kd>var</span> <span class=nx>gpioAccess</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>navigator</span><span class=p>.</span><span class=nx>requestGPIOAccess</span><span class=p>();</span> 
-  <span class=nx>port4</span> <span class=o>=</span> <span class=nx>gpioAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>4</span><span class=p>);</span>
-  <span class=nx>port5</span> <span class=o>=</span> <span class=nx>gpioAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>5</span><span class=p>);</span>
-  <span class=nx>await</span> <span class=nx>port4</span><span class=p>.</span><span class=kr>export</span><span class=p>(</span><span class=s2>&quot;out&quot;</span><span class=p>);</span>
-  <span class=nx>await</span> <span class=nx>port5</span><span class=p>.</span><span class=kr>export</span><span class=p>(</span><span class=s2>&quot;out&quot;</span><span class=p>);</span>
-
+<span class=hll>  <span class=kd>var</span> <span class=nx>gpioAccess</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>navigator</span><span class=p>.</span><span class=nx>requestGPIOAccess</span><span class=p>();</span> 
+</span><span class=hll>  <span class=nx>port4</span> <span class=o>=</span> <span class=nx>gpioAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>4</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>port5</span> <span class=o>=</span> <span class=nx>gpioAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>5</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>port4</span><span class=p>.</span><span class=kr>export</span><span class=p>(</span><span class=s2>&quot;out&quot;</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>port5</span><span class=p>.</span><span class=kr>export</span><span class=p>(</span><span class=s2>&quot;out&quot;</span><span class=p>);</span>
+</span>
   <span class=nx>createCanvas</span><span class=p>(</span><span class=mi>320</span><span class=p>,</span> <span class=mi>260</span><span class=p>);</span>
   <span class=c1>// Create the video</span>
   <span class=nx>video</span> <span class=o>=</span> <span class=nx>createCapture</span><span class=p>(</span><span class=nx>VIDEO</span><span class=p>);</span>
@@ -544,14 +544,14 @@
   <span class=c1>// console.log(results[0]);</span>
   <span class=nx>label</span> <span class=o>=</span> <span class=nx>results</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>label</span><span class=p>;</span>
 
-  <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;box&quot;</span><span class=p>)</span> <span class=p>{</span>
-    <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-    <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
-  <span class=p>}</span> <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;arduino&quot;</span><span class=p>)</span> <span class=p>{</span>
-    <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
-    <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-  <span class=p>}</span>
-
+<span class=hll>  <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;box&quot;</span><span class=p>)</span> <span class=p>{</span>
+</span><span class=hll>    <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span><span class=hll>    <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span><span class=hll>  <span class=p>}</span> <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;arduino&quot;</span><span class=p>)</span> <span class=p>{</span>
+</span><span class=hll>    <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span><span class=hll>    <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span><span class=hll>  <span class=p>}</span>
+</span>
   <span class=c1>// Classifiy again!</span>
   <span class=nx>classifyVideo</span><span class=p>();</span>
 <span class=p>}</span>
