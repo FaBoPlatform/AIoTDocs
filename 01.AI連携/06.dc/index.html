@@ -260,6 +260,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../05.servo/" title="Chirimen(Servo)" class="md-nav__link">
+      Chirimen(Servo)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -289,13 +301,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#indexhtml" title="index.html" class="md-nav__link">
-    index.html
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sketchjs" title="sketch.js" class="md-nav__link">
     sketch.js
   </a>
@@ -310,18 +315,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../06.dc/" title="Chirimen(Servo)" class="md-nav__link">
-      Chirimen(Servo)
-    </a>
   </li>
 
         
@@ -363,13 +356,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#indexhtml" title="index.html" class="md-nav__link">
-    index.html
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sketchjs" title="sketch.js" class="md-nav__link">
     sketch.js
   </a>
@@ -394,57 +380,11 @@
                 
                 
                 <h1 id="chirimenservo">Chirimen(Servo)</h1>
-<p>Servoを使用します。</p>
-<h2 id="indexhtml">index.html</h2>
-<p><code>&lt;script src="https://r.chirimen.org/pca9685.js"&gt;&lt;/script&gt;</code>を追記します。</p>
-<p>index.html</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=o>&lt;</span><span class=nx>html</span><span class=o>&gt;</span>
-
-<span class=o>&lt;</span><span class=nx>head</span><span class=o>&gt;</span>
-  <span class=o>&lt;</span><span class=nx>meta</span> <span class=nx>charset</span><span class=o>=</span><span class=s2>&quot;UTF-8&quot;</span><span class=o>&gt;</span>
-  <span class=o>&lt;</span><span class=nx>title</span><span class=o>&gt;</span><span class=nx>Webcam</span> <span class=nx>Image</span> <span class=nx>Classification</span> <span class=nx>using</span> <span class=nx>a</span> <span class=nx>pre</span><span class=o>-</span><span class=nx>trained</span> <span class=nx>customized</span> <span class=nx>model</span> <span class=nx>and</span> <span class=nx>p5</span><span class=p>.</span><span class=nx>js</span><span class=o>&lt;</span><span class=err>/title&gt;</span>
-  <span class=o>&lt;</span><span class=nx>script</span> <span class=nx>src</span><span class=o>=</span><span class=s2>&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js&quot;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
-  <span class=o>&lt;</span><span class=nx>script</span> <span class=nx>src</span><span class=o>=</span><span class=s2>&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js&quot;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
-  <span class=o>&lt;</span><span class=nx>script</span> <span class=nx>src</span><span class=o>=</span><span class=s2>&quot;https://unpkg.com/ml5@0.4.3/dist/ml5.min.js&quot;</span> <span class=nx>type</span><span class=o>=</span><span class=s2>&quot;text/javascript&quot;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
-  <span class=o>&lt;</span><span class=nx>script</span> <span class=nx>src</span><span class=o>=</span><span class=s2>&quot;https://r.chirimen.org/polyfill.js&quot;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
-<span class=hll>  <span class=o>&lt;</span><span class=nx>script</span> <span class=nx>src</span><span class=o>=</span><span class=s2>&quot;https://r.chirimen.org/pca9685.js&quot;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
-</span><span class=o>&lt;</span><span class=err>/head&gt;</span>
-
-<span class=o>&lt;</span><span class=nx>body</span><span class=o>&gt;</span>
-  <span class=o>&lt;</span><span class=nx>h1</span><span class=o>&gt;</span><span class=nx>Teachable</span> <span class=nx>Machine</span><span class=o>&lt;</span><span class=err>/h1&gt;</span>
-  <span class=o>&lt;</span><span class=nx>p</span><span class=o>&gt;</span><span class=nx>This</span> <span class=nx>is</span> <span class=nx>a</span> <span class=nx>demonstration</span> <span class=k>of</span> <span class=nx>image</span> <span class=nx>classification</span> <span class=nx>using</span> <span class=nx>a</span> <span class=nx>model</span> <span class=nx>trained</span> <span class=kd>with</span> <span class=nx>Google</span><span class=err>&#39;</span><span class=nx>s</span> <span class=nx>Teachable</span>
-    <span class=nx>Machine</span> <span class=nx>project</span><span class=p>.</span> <span class=nx>If</span> <span class=nx>you</span> <span class=nx>cover</span> <span class=nx>the</span> <span class=nx>camera</span><span class=p>,</span> <span class=k>this</span> <span class=nx>model</span> <span class=nx>will</span> <span class=nx>classify</span> <span class=nx>the</span> <span class=nx>image</span> <span class=nx>as</span> <span class=s2>&quot;nighttime,&quot;</span> <span class=nx>otherwise</span> <span class=nx>will</span> <span class=nx>classify</span>
-    <span class=nx>anything</span> <span class=k>else</span> <span class=nx>as</span> <span class=s2>&quot;daytime.&quot;</span> <span class=o>&lt;</span><span class=err>/p&gt;</span>
-  <span class=o>&lt;</span><span class=nx>script</span> <span class=nx>src</span><span class=o>=</span><span class=s2>&quot;sketch.js&quot;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
-<span class=o>&lt;</span><span class=err>/body&gt;</span>
-
-<span class=o>&lt;</span><span class=err>/html&gt;</span>
-</pre></div></td></tr></table></p>
 <h2 id="sketchjs">sketch.js</h2>
-<p>Servoを操作します。</p>
+<p>DC Motorを操作します。</p>
 <p>I2Cの認識状況の確認には <a href="https://chirimen.org/chirimen-raspi3/gc/i2c/i2c-detect/index.html">I2C Detect</a> を用います。今回は、PCA9685を使用するので0x40が認識できていれば動作します。</p>
 <p>FaBo ShieldのDCジャックに5Vを供給してください。5Vの電源供給しないとI2Cの認識ができません。</p>
-<p>Servoの値は、-30〜30の値が設定できます。90度の範囲で回転可能です。</p>
+<p>DCの値は、0x06〜0x3Fの値が設定できます。<code>FORWARD</code>が前進, <code>BACKWARD</code>が後進です。</p>
 <p>sketch.js</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>  1
   2
@@ -551,7 +491,26 @@
 103
 104
 105
-106</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// Copyright (c) 2019 ml5</span>
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// Copyright (c) 2019 ml5</span>
 <span class=c1>//</span>
 <span class=c1>// This software is released under the MIT License.</span>
 <span class=c1>// https://opensource.org/licenses/MIT</span>
@@ -565,18 +524,22 @@
 <span class=c1>// Classifier Variable</span>
 <span class=kd>let</span> <span class=nx>classifier</span><span class=p>;</span>
 <span class=c1>// Model URL</span>
-<span class=kd>let</span> <span class=nx>imageModelURL</span> <span class=o>=</span> <span class=s1>&#39;https://teachablemachine.withgoogle.com/models/bXy2kDNi/model.json&#39;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>imageModelURL</span> <span class=o>=</span> <span class=s1>&#39;https://teachablemachine.withgoogle.com/models/oF8lUO4C/model.json&#39;</span><span class=p>;</span>
 
 <span class=c1>// Video</span>
 <span class=kd>let</span> <span class=nx>video</span><span class=p>;</span>
 <span class=kd>let</span> <span class=nx>flippedVideo</span><span class=p>;</span>
 <span class=c1>// To store the classification</span>
 <span class=kd>let</span> <span class=nx>label</span> <span class=o>=</span> <span class=s2>&quot;&quot;</span><span class=p>;</span>
-<span class=c1>// port</span>
+
 <span class=kd>let</span> <span class=nx>port4</span><span class=p>;</span>
 <span class=kd>let</span> <span class=nx>port5</span><span class=p>;</span>
-<span class=c1>// Servo</span>
-<span class=hll><span class=kd>let</span> <span class=nx>pca9685</span><span class=p>;</span>
+
+<span class=kd>let</span> <span class=nx>pca9685</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>motor</span> <span class=o>=</span> <span class=p>{};</span>
+
+<span class=hll><span class=kd>let</span> <span class=nx>FORWARD</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span><span class=hll><span class=kd>let</span> <span class=nx>BACK</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
 </span>
 <span class=c1>// Load the model first</span>
 <span class=kd>function</span> <span class=nx>preload</span><span class=p>()</span> <span class=p>{</span>
@@ -590,14 +553,21 @@
   <span class=nx>await</span> <span class=nx>port4</span><span class=p>.</span><span class=kr>export</span><span class=p>(</span><span class=s2>&quot;out&quot;</span><span class=p>);</span>
   <span class=nx>await</span> <span class=nx>port5</span><span class=p>.</span><span class=kr>export</span><span class=p>(</span><span class=s2>&quot;out&quot;</span><span class=p>);</span>
 
-<span class=hll>  <span class=kd>var</span> <span class=nx>i2cAccess</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>navigator</span><span class=p>.</span><span class=nx>requestI2CAccess</span><span class=p>();</span>
-</span><span class=hll>  <span class=kd>var</span> <span class=nx>port</span> <span class=o>=</span> <span class=nx>i2cAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
-</span><span class=hll>  <span class=nx>pca9685</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>PCA9685</span><span class=p>(</span><span class=nx>port</span><span class=p>,</span> <span class=mh>0x40</span><span class=p>);</span>
-</span><span class=hll>  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>init</span><span class=p>(</span><span class=mf>0.001</span><span class=p>,</span> <span class=mf>0.002</span><span class=p>,</span> <span class=mi>30</span><span class=p>);</span>
+  <span class=kd>var</span> <span class=nx>i2cAccess</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>navigator</span><span class=p>.</span><span class=nx>requestI2CAccess</span><span class=p>();</span>
+  <span class=kd>var</span> <span class=nx>port</span> <span class=o>=</span> <span class=nx>i2cAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+  <span class=nx>pca9685</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>PCA9685</span><span class=p>(</span><span class=nx>port</span><span class=p>,</span> <span class=mh>0x40</span><span class=p>);</span>
+  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>init</span><span class=p>(</span><span class=mf>0.001</span><span class=p>,</span> <span class=mf>0.002</span><span class=p>,</span> <span class=mi>30</span><span class=p>);</span>
+
+<span class=hll>  <span class=c1>// motor</span>
+</span><span class=hll>  <span class=nx>motor</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>port</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=mh>0x63</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>motor</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>port</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=mh>0x64</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>motor</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>write8</span><span class=p>(</span><span class=mh>0x00</span><span class=p>,</span><span class=mh>0x00</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>motor</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>write8</span><span class=p>(</span><span class=mh>0x00</span><span class=p>,</span><span class=mh>0x00</span><span class=p>);</span>  
 </span><span class=p>}</span>
 
+
 <span class=kd>function</span> <span class=nx>setup</span><span class=p>()</span> <span class=p>{</span>
-  <span class=nx>init</span><span class=p>();</span>
+   <span class=nx>init</span><span class=p>();</span>
 
   <span class=nx>createCanvas</span><span class=p>(</span><span class=mi>320</span><span class=p>,</span> <span class=mi>260</span><span class=p>);</span>
   <span class=c1>// Create the video</span>
@@ -628,9 +598,13 @@
   <span class=nx>classifier</span><span class=p>.</span><span class=nx>classify</span><span class=p>(</span><span class=nx>flippedVideo</span><span class=p>,</span> <span class=nx>gotResult</span><span class=p>);</span>
 <span class=p>}</span>
 
-<span class=c1>// Servo</span>
-<span class=hll><span class=nx>async</span> <span class=kd>function</span> <span class=nx>controlServo</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>angle</span><span class=p>)</span> <span class=p>{</span>
-</span><span class=hll>  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>setServo</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>angle</span><span class=p>);</span>
+<span class=nx>async</span> <span class=kd>function</span> <span class=nx>controlServo</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>angle</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>setServo</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>angle</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=hll><span class=nx>async</span> <span class=kd>function</span> <span class=nx>controlMotor</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>direction</span><span class=p>,</span> <span class=nx>speed</span><span class=p>)</span> <span class=p>{</span>
+</span><span class=hll>  <span class=kd>let</span> <span class=nx>value</span> <span class=o>=</span> <span class=p>(</span><span class=nx>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=nx>direction</span> <span class=o>+</span> <span class=mi>1</span><span class=o>&amp;</span><span class=mh>0xff</span><span class=p>;</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>motor</span><span class=p>[</span><span class=nx>num</span><span class=p>].</span><span class=nx>write8</span><span class=p>(</span><span class=mh>0x00</span><span class=p>,</span><span class=nx>value</span><span class=p>);</span> 
 </span><span class=hll><span class=p>}</span>
 </span>
 <span class=c1>// When we get a result</span>
@@ -644,14 +618,18 @@
   <span class=c1>// console.log(results[0]);</span>
   <span class=nx>label</span> <span class=o>=</span> <span class=nx>results</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>label</span><span class=p>;</span>
 
-  <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;box&quot;</span><span class=p>)</span> <span class=p>{</span>
+  <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;Class 1&quot;</span><span class=p>)</span> <span class=p>{</span>
     <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
     <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
-<span class=hll>    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>30</span><span class=p>);</span>
-</span>  <span class=p>}</span> <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;arduino&quot;</span><span class=p>)</span> <span class=p>{</span>
-    <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>30</span><span class=p>);</span>
+    <span class=c1>// Speed: 0x06-0x3F</span>
+<span class=hll>    <span class=nx>controlMotor</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=nx>FORWARD</span><span class=p>,</span><span class=mh>0x3F</span><span class=p>);</span>
+</span><span class=hll>  <span class=p>}</span> <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;Class 2&quot;</span><span class=p>)</span> <span class=p>{</span>
+</span>    <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
     <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-<span class=hll>    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>30</span><span class=p>);</span>
+    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>30</span><span class=p>);</span>
+    <span class=c1>// Speed: 0x06-0x3F</span>
+<span class=hll>    <span class=nx>controlMotor</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=nx>BACK</span><span class=p>,</span><span class=mh>0x3F</span><span class=p>);</span>
 </span>  <span class=p>}</span>
 
   <span class=c1>// Classifiy again!</span>
@@ -678,7 +656,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../04.aijs/" title="Chirimen(LED)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../05.servo/" title="Chirimen(Servo)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -687,19 +665,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Chirimen(LED)
+                Chirimen(Servo)
               </span>
             </div>
           </a>
         
         
-          <a href="../06.dc/" title="Chirimen(Servo)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../07.hardware/" title="FaBo連携可能なライブラリ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Chirimen(Servo)
+                FaBo連携可能なライブラリ
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
