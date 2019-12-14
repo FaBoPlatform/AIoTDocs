@@ -612,8 +612,8 @@
 <span class=p>}</span>
 
 <span class=c1>// Servo</span>
-<span class=hll><span class=nx>async</span> <span class=kd>function</span> <span class=nx>controlServo</span><span class=p>(</span><span class=nx>angle</span><span class=p>)</span> <span class=p>{</span>
-</span><span class=hll>  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>setServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=nx>angle</span><span class=p>);</span>
+<span class=hll><span class=nx>async</span> <span class=kd>function</span> <span class=nx>controlServo</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>angle</span><span class=p>)</span> <span class=p>{</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>setServo</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>angle</span><span class=p>);</span>
 </span><span class=hll><span class=p>}</span>
 </span>
 <span class=c1>// When we get a result</span>
@@ -630,11 +630,11 @@
   <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;box&quot;</span><span class=p>)</span> <span class=p>{</span>
     <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
     <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
-<span class=hll>    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+<span class=hll>    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
 </span>  <span class=p>}</span> <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=nx>label</span> <span class=o>==</span> <span class=s2>&quot;arduino&quot;</span><span class=p>)</span> <span class=p>{</span>
     <span class=nx>port4</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
     <span class=nx>port5</span><span class=p>.</span><span class=nx>write</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-<span class=hll>    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>90</span><span class=p>);</span>
+<span class=hll>    <span class=nx>controlServo</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>90</span><span class=p>);</span>
 </span>  <span class=p>}</span>
 
   <span class=c1>// Classifiy again!</span>
