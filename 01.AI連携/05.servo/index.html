@@ -430,6 +430,8 @@
 </pre></div></td></tr></table></p>
 <h2 id="sketchjs">sketch.js</h2>
 <p>Servoを操作します。</p>
+<p>I2Cの認識状況の確認には <a href="https://chirimen.org/chirimen-raspi3/gc/i2c/i2c-detect/index.html">I2C Detect</a> を用います。今回は、PCA9685を使用するので0x40が認識できていれば動作します。</p>
+<p>FaBo ShieldのDCジャックに5Vを供給してください。供給しないと認識できません。</p>
 <p>sketch.js</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>  1
   2
@@ -535,7 +537,8 @@
 102
 103
 104
-105</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// Copyright (c) 2019 ml5</span>
+105
+106</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// Copyright (c) 2019 ml5</span>
 <span class=c1>//</span>
 <span class=c1>// This software is released under the MIT License.</span>
 <span class=c1>// https://opensource.org/licenses/MIT</span>
@@ -577,6 +580,7 @@
 <span class=hll>  <span class=kd>var</span> <span class=nx>i2cAccess</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>navigator</span><span class=p>.</span><span class=nx>requestI2CAccess</span><span class=p>();</span>
 </span><span class=hll>  <span class=kd>var</span> <span class=nx>port</span> <span class=o>=</span> <span class=nx>i2cAccess</span><span class=p>.</span><span class=nx>ports</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
 </span><span class=hll>  <span class=nx>pca9685</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>PCA9685</span><span class=p>(</span><span class=nx>port</span><span class=p>,</span> <span class=mh>0x40</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>init</span><span class=p>(</span><span class=mf>0.001</span><span class=p>,</span> <span class=mf>0.002</span><span class=p>,</span> <span class=mi>30</span><span class=p>);</span>
 </span><span class=p>}</span>
 
 <span class=kd>function</span> <span class=nx>setup</span><span class=p>()</span> <span class=p>{</span>
