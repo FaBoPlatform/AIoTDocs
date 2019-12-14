@@ -603,7 +603,7 @@
 <span class=p>}</span>
 
 <span class=hll><span class=nx>async</span> <span class=kd>function</span> <span class=nx>controlMotor</span><span class=p>(</span><span class=nx>num</span><span class=p>,</span> <span class=nx>direction</span><span class=p>,</span> <span class=nx>speed</span><span class=p>)</span> <span class=p>{</span>
-</span><span class=hll>  <span class=kd>let</span> <span class=nx>value</span> <span class=o>=</span> <span class=p>(</span><span class=nx>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=nx>direction</span> <span class=o>+</span> <span class=mi>1</span><span class=o>&amp;</span><span class=mh>0xff</span><span class=p>;</span>
+</span><span class=hll>  <span class=kd>let</span> <span class=nx>value</span> <span class=o>=</span> <span class=p>(</span><span class=nx>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=nx>direction</span><span class=p>;</span>
 </span><span class=hll>  <span class=nx>await</span> <span class=nx>motor</span><span class=p>[</span><span class=nx>num</span><span class=p>].</span><span class=nx>write8</span><span class=p>(</span><span class=mh>0x00</span><span class=p>,</span><span class=nx>value</span><span class=p>);</span> 
 </span><span class=hll><span class=p>}</span>
 </span>
