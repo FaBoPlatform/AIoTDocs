@@ -382,7 +382,7 @@
                 <h1 id="chirimendc-motor">Chirimen(DC Motor)</h1>
 <h2 id="sketchjs">sketch.js</h2>
 <p>DC Motorを操作します。</p>
-<p>I2Cの認識状況の確認には <a href="https://chirimen.org/chirimen-raspi3/gc/i2c/i2c-detect/index.html">I2C Detect</a> を用います。今回は、PCA9685を使用するので0x40が認識できていれば動作します。</p>
+<p>I2Cの認識状況の確認には <a href="https://chirimen.org/chirimen-raspi3/gc/i2c/i2c-detect/index.html">I2C Detect</a> を用います。今回は、DRV8830を使用するので0x63, 0x64が認識できていれば動作します。</p>
 <p>FaBo ShieldのDCジャックに5Vを供給してください。5Vの電源供給しないとI2Cの認識ができません。</p>
 <p>DCの値は、0x06〜0x3Fの値が設定できます。<code>FORWARD</code>が前進, <code>BACKWARD</code>が後進です。</p>
 <p>sketch.js</p>
