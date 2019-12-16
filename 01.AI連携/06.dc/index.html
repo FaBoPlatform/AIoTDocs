@@ -403,6 +403,7 @@
 </tr>
 </tbody>
 </table>
+<p><code>controlMotor(0,FORWARD,0x3F);</code>のように0を指定するとmotor1, <code>controlMotor(1,FORWARD,0x3F);</code>のように1を指定するとmotor2を制御可能です。</p>
 <p>sketch.js</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>  1
   2
@@ -577,8 +578,8 @@
   <span class=nx>await</span> <span class=nx>pca9685</span><span class=p>.</span><span class=nx>init</span><span class=p>(</span><span class=mf>0.001</span><span class=p>,</span> <span class=mf>0.002</span><span class=p>,</span> <span class=mi>30</span><span class=p>);</span>
 
 <span class=hll>  <span class=c1>// motor</span>
-</span><span class=hll>  <span class=nx>motor</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>port</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=mh>0x63</span><span class=p>);</span>
-</span><span class=hll>  <span class=nx>motor</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>port</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=mh>0x64</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>motor</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>port</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=mh>0x64</span><span class=p>);</span>
+</span><span class=hll>  <span class=nx>motor</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=nx>await</span> <span class=nx>port</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=mh>0x63</span><span class=p>);</span>
 </span><span class=hll>  <span class=nx>await</span> <span class=nx>motor</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>write8</span><span class=p>(</span><span class=mh>0x00</span><span class=p>,</span><span class=mh>0x00</span><span class=p>);</span>
 </span><span class=hll>  <span class=nx>await</span> <span class=nx>motor</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>write8</span><span class=p>(</span><span class=mh>0x00</span><span class=p>,</span><span class=mh>0x00</span><span class=p>);</span>  
 </span><span class=p>}</span>
